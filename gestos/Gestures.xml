@@ -1,0 +1,43 @@
+<!--This XML file contains the gestures of the database.-->
+<Gestures>
+  <Gesture>
+    <ID>0</ID>
+    <NAME>CloseRest</NAME>
+    <SEMANTIC>CloseR</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>1</ID>
+    <NAME>Closure</NAME>
+    <SEMANTIC>Closure</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>2</ID>
+    <NAME>Departure</NAME>
+    <SEMANTIC>Departure</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>3</ID>
+    <NAME>SCROLL_UP_Left</NAME>
+    <SEMANTIC>SCROLLUPL</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>4</ID>
+    <NAME>SCROLL_UP_Right</NAME>
+    <SEMANTIC>SCROLLUPR</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>5</ID>
+    <NAME>SelectGest_Right</NAME>
+    <SEMANTIC>SelectGR</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>6</ID>
+    <NAME>swipe_Left</NAME>
+    <SEMANTIC>swipeL</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>7</ID>
+    <NAME>swipe_Right</NAME>
+    <SEMANTIC>swipeR</SEMANTIC>
+  </Gesture>
+</Gestures>
