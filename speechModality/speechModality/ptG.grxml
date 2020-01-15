@@ -410,6 +410,77 @@
             </item>
         </one-of>
       </item>
+      <item>
+        <tag>out.Categoria = "Cima";</tag>
+        <one-of>
+          <item>
+            <ruleref uri="#Cima"/>
+            <tag>out.Cima = rules.Cima.Cima;</tag>
+          </item>
+          <item>
+              <ruleref uri="#VerbosCimaBaixo"/>
+              <ruleref uri="#Cima"/>
+              <tag>out.Cima = rules.Cima.Cima;</tag>
+            </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.Categoria = "Esquerda";</tag>
+        <one-of>
+          <item>
+            <ruleref uri="#Esquerda"/>
+            <tag>out.Esquerda = rules.Esquerda.Esquerda;</tag>
+          </item>
+          <item>
+            <ruleref uri="#VerboEscolher"/>
+            <ruleref uri="#Esquerda"/>
+            <tag>out.Esquerda = rules.Esquerda.Esquerda;</tag>
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.Categoria = "Direira";</tag>
+        <one-of>
+          <item>
+            <ruleref uri="#Direira"/>
+            <tag>out.Direira = rules.Direira.Direira;</tag>
+          </item>
+          <item>
+            <ruleref uri="#VerboEscolher"/>
+            <ruleref uri="#Direira"/>
+            <tag>out.Direira = rules.Direira.Direira;</tag>
+          </item>
+        </one-of>
+      </item>
+      
+      <item>
+        <tag>out.Categoria = "Voltar";</tag>
+        <one-of>
+          <item>
+            <ruleref uri="#Voltar"/>
+            <tag>out.Voltar = rules.Voltar.Voltar;</tag>
+          </item>
+          <item>
+            <ruleref uri="#VerboEscolher"/>
+            <ruleref uri="#Voltar"/>
+            <tag>out.Voltar = rules.Voltar.Voltar;</tag>
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.Categoria = "Baixo";</tag>
+        <one-of>
+          <item>
+            <ruleref uri="#Baixo"/>
+            <tag>out.Baixo = rules.Baixo.Baixo;</tag>
+          </item>
+          <item>
+              <ruleref uri="#VerbosCimaBaixo"/>
+              <ruleref uri="#Baixo"/>
+              <tag>out.Baixo = rules.Baixo.Baixo;</tag>
+            </item>
+        </one-of>
+      </item>
     </one-of>
   </rule>
 
@@ -903,6 +974,60 @@
     </item>
   </rule>
 
+  <rule id="Cima">
+    <item repeat="1">
+      <one-of>
+        <item>Cima<tag>out.Cima="Cima"</tag></item>
+      </one-of>
+    </item>
+  </rule>
+
+  <rule id="Baixo">
+    <item repeat="1">
+      <one-of>
+        <item>Baixo<tag>out.Baixo="Baixo"</tag></item>
+      </one-of>
+    </item>
+  </rule>
+
+  <rule id="Voltar">
+    <item repeat="1">
+      <one-of>
+        <item>
+          Voltar<tag>out.Voltar="Voltar"</tag>
+        </item>
+      </one-of>
+    </item>
+  </rule>
+  
+  <rule id="Esquerda">
+    <item repeat="1">
+      <one-of>
+        <item>
+          Esquerda<tag>out.Esquerda="Esquerda"</tag>
+        </item>
+        <item>
+          Anterior<tag>out.Esquerda="Esquerda"</tag>
+        </item>
+      </one-of>
+    </item>
+  </rule>
+  
+  <rule id="Direira">
+    <item repeat="1">
+      <one-of>
+        <item>
+          Direira<tag>out.Direira="Direira"</tag>
+        </item>
+        <item>
+          Proximo<tag>out.Direira="Direira"</tag>
+        </item>
+      </one-of>
+    </item>
+  </rule>
+
+  
+
   <rule id="MaisVerbos">
     <item repeat="1">
         <tag>out.MaisVerbos = "MaisVerbos"</tag>
@@ -914,6 +1039,19 @@
         <item>Gostaria de mais informação sobre</item>
         <item>Gostaria de mais resultados</item>
         <item>Gostaria de mais resultados para</item>
+      </one-of>
+    </item>
+  </rule>
+
+  <rule id="VerbosCimaBaixo">
+    <item repeat="1">
+        <tag>out.VerbosCimaBaixo = "VerbosCimaBaixo"</tag>
+      <one-of>
+        <item>quero andar para</item>
+        <item>andar para</item>
+        <item>Move-me para </item>
+        <item>Anda para </item>
+        <item>Mostra-me o de</item>
       </one-of>
     </item>
   </rule>

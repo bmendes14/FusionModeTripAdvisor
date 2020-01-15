@@ -518,9 +518,13 @@ namespace speechModality
             // CHANGED FOR FUSION ---------------------------------------
             //SEND
             string json = "{ \"recognized\": [";
+            //foreach (var resultSemantic in e.Result.Semantics)
+            //{
+            //    json += "\"" + resultSemantic.Key + "\",\"" + resultSemantic.Value.Value + "\", ";
+            //}
             foreach (var resultSemantic in e.Result.Semantics)
             {
-                json += "\"" + resultSemantic.Key + "\",\"" + resultSemantic.Value.Value + "\", ";
+                json += "\"" + resultSemantic.Value.Value + "\", ";
             }
             json = json.Substring(0, json.Length - 2);
             json += "] }";
@@ -528,7 +532,13 @@ namespace speechModality
             // END CHANGED FOR FUSION ---------------------------------------
 
             var exNot = lce.ExtensionNotification(e.Result.Audio.StartTime + "", e.Result.Audio.StartTime.Add(e.Result.Audio.Duration) + "", e.Result.Confidence, json);
-            mmic.Send(exNot);
+
+            bool pR = processRequest(e);
+
+            if (pR)
+            {
+                mmic.Send(exNot);
+            }
 
         }
     }
